@@ -30,36 +30,47 @@ function App() {
       </p> */}
 
         <header>
-          <span>Olga Nikanorova</span>
-          <span>GBP</span>
-          <span>Edit</span>
+          <div>Serving In Mission</div>
+          <div className='user'>
+            <span className='user__name'>Olga Nikanorova</span>
+            <span className='user__currency'>GBP</span>
+            <span className='user__edit'>Edit</span>
+          </div>
         </header>
 
         <main>
           <section className='claim'>
-            <div>
-              <span>Expenses</span>
-              <span>Income</span>
-            </div>
+            <form action="">
+              <fieldset className='claim__type'>
+                <label htmlFor="">
+                  <input type="radio" name="claim" value="Expenses" checked/>
+                  <span>Expenses</span>
+                </label>
+                <label htmlFor="">
+                  <input type="radio" name="claim" value="Income"/>
+                  <span>Income</span>
+                </label>
+              </fieldset>
 
-            <div>19.02.2026</div>
+              <div>19.02.2026</div>
 
-            <div>
-              <span>Support</span>
-              <span>Children's education</span>
-            </div>
+              <div>
+                <span>Support</span>
+                <span>Children's education</span>
+              </div>
 
-            <div>Description</div>
+              <div>Description</div>
 
-            <div className='numbers'>
-              <div><span>69.00</span><span>USD</span></div>
-              <div>exchange rate</div>
-              <div><span>63.00</span><span>GBP</span></div>
-            </div>
+              <div className='numbers'>
+                <div><span>69.00</span><span>USD</span></div>
+                <div>exchange rate</div>
+                <div><span>63.00</span><span>GBP</span></div>
+              </div>
 
-            <div>add files</div>
+              <div>add files</div>
 
-            <div><button>Save</button><button>Cancel</button></div>
+              <div><button>Save</button><button>Cancel</button></div>
+            </form>
 
           </section>
 
