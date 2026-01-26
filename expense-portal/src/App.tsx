@@ -52,24 +52,59 @@ function App() {
                 </label>
               </fieldset>
 
-              <div>19.02.2026</div>
+              <fieldset className='claim__date'>
+                <input type="text" placeholder='19.02.2026' />
+                <button>choose</button>
+              </fieldset>
 
-              <div>
-                <span>Support</span>
-                <span>Children's education</span>
+              <div className='dropdown'>
+                <button type='button' aria-haspopup='listbox' aria-expanded='false' aria-controls='dropdown-list'>
+                choose one
+                </button>
+                <ul id='dropdown-list' role='listbox' aria-labelledby='dropdown-button'>
+                  <li role='option' area-selecte='false' data-value='support'>Support</li>
+                  <li role='option' area-selecte='false' data-value='ministry'>Ministry</li>
+                  <li role='option' area-selecte='false' data-value='project'>Project</li>
+                  <li role='option' area-selecte='false' data-value='staff'>SIM office staff</li>
+                </ul>
               </div>
 
-              <div>Description</div>
+              <div className='dropdown'>
+                <button type='button' aria-haspopup='listbox-sub' aria-expanded='false' aria-controls='dropdown-list-sub'>
+                choose one
+                </button>
+                <ul id='dropdown-list-sub' role='listbox-sub' aria-labelledby='dropdown-button'>
+                  <li role='option' area-selecte='false'>Children</li>
+                  <li role='option' area-selecte='false'>Medical</li>
+                  <li role='option' area-selecte='false'>Housing</li>
+                  <li role='option' area-selecte='false'>Other</li>
+                </ul>
+              </div>
+
+
+              <textarea name="description" id="description">Description</textarea>
+
 
               <div className='numbers'>
-                <div><span>69.00</span><span>USD</span></div>
-                <div>exchange rate</div>
+                <div>
+                  <input type="number" placeholder='amount'/>
+                  <span>dropdown of currencies</span>
+                </div>
+                <div>
+                  <input type="number" placeholder='exchange rate'/>
+                </div>
                 <div><span>63.00</span><span>GBP</span></div>
               </div>
 
-              <div>add files</div>
+              <fieldset>
+                <label htmlFor="receipts">+</label>
+                <input type="file" id="receipts" name='receipts'/>
+              </fieldset>
 
-              <div><button>Save</button><button>Cancel</button></div>
+              <div>
+                <button>Save</button>
+                <button>Cancel</button>
+              </div>
             </form>
 
           </section>

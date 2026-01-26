@@ -112,8 +112,9 @@ button:focus-visible {
   }
   section {
     padding: 20px 50px;
-    border: 1px var(--background-light-grey);
+    border: 1px solid var(--red);
     border-radius: 20px;
+    margin: 20px;
   }
   .claim {
     grid-area: claim;
@@ -124,13 +125,21 @@ button:focus-visible {
   .review {
     grid-area: review;
   }
+  fieldset,
+  textarea {
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid var(--red);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+  }
 
   .claim__type {
     padding: 0;
-    /* padding-block: 0; */
-    /* padding-inline: 0; */
     border: none;
-    display: flex;
     justify-content: space-around;
   }
 
@@ -148,10 +157,12 @@ button:focus-visible {
   .claim__type > :first-child > span {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
+    padding: 10px 15px;
   }
   .claim__type > :nth-child(2) > span {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
+    padding: 10px 15px;
   }
   .claim__type > label > span {
     background-color: var(--red);
@@ -161,6 +172,41 @@ button:focus-visible {
     opacity: 1;
   }
 
+  .claim__date {
+    justify-content: space-between;
+  }
+   .claim__date > input,
+   .claim__date > button {
+    border: none;
+    background: none;
+  }
+
+input[type="file"] {
+  height: 100px;
+}
+
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  /* background: var(--white); */
+  color: var(--red);
+  width: 100%;
+  border: 1px solid var(--red);
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.dropdown > button {
+  background: none;
+  border: none;
+}
+.dropdown > ul {
+  display: none;
+}
+.dropdown.active > ul {
+  display: block;
+}
 
   /* COLORS */
 --red: #D60F2F;
@@ -173,7 +219,7 @@ button:focus-visible {
 /* FONTS */
 --font-brand: 4vh;
 --font-large: 3vh;
---font-basic: 2.5vh;
+--font-basic: 20px;
 --font-small: 1vh;
 
 
