@@ -10,6 +10,7 @@ import Bye from './pages/Bye/Bye.tsx'
 
 import './index.css'
 import './styles/_reset.css'
+import './styles/_variables.scss'
 // import App from './App.tsx'
 
 

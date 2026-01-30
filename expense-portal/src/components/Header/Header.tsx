@@ -1,7 +1,15 @@
+import './Header.scss'
+
+
 export default function Header() {
   return (
     <header>
-      hello header
+      <div>Serving In Mission</div>
+      <div className='user'>
+        <span className='user__name'>Olga Nikanorova</span>
+        <span className='user__currency'>GBP</span>
+        <span className='user__edit'>Edit</span>
+      </div>
     </header>
   )
 }

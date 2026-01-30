@@ -66,40 +66,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   } */
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    background: var(--red);
-    color: var(--white);
-    padding: 20px 10px;
-    font-size: var(--font-large);
-    height: fit-content;
-  }
-  header > :first-child {
-      display: grid;
-      align-self: center;
-      font-size: var(--font-brand);
-    }
-  .user {
-    display: grid;
-    grid-template-areas:
-    "name edit"
-    "currency edit";
-    justify-items: end;
-  }
-  .user__name {
-    grid-area: name;
-  }
-  .user__currency {
-    grid-area: currency;
-    font-size: var(--font-basic);
-  }
-  .user__edit {
-    grid-area: edit;
-    align-self: center;
-    padding-left: 20px;
-    font-size: var(--font-basic);
-  }
+
 
   main {
     display: grid;
@@ -207,22 +174,4 @@ input[type="file"] {
 .dropdown.active > ul {
   display: block;
 }
-
-  /* COLORS */
---red: #D60F2F;
---white: #FFFFFF;
---background-light-grey: #F3F4F6;
---border-grey:#DADDE1;
---text-dark: #1F2328;
---muted-text: #5F6B7A;
-
-/* FONTS */
---font-brand: 4vh;
---font-large: 3vh;
---font-basic: 20px;
---font-small: 1vh;
-
-
-
-
 }

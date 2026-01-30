@@ -29,14 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */}
 
-        <header>
-          <div>Serving In Mission</div>
-          <div className='user'>
-            <span className='user__name'>Olga Nikanorova</span>
-            <span className='user__currency'>GBP</span>
-            <span className='user__edit'>Edit</span>
-          </div>
-        </header>
+
 
         <main>
           <section className='claim'>
