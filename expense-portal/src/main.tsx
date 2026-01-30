@@ -4,9 +4,9 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Layout from './layouts/Layout.tsx'
-import Home from './pages/Home'
-import Main from './pages/Main'
-import Bye from './pages/Bye'
+import Home from './pages/Home/Home.tsx'
+import Main from './pages/Main/Main.tsx'
+import Bye from './pages/Bye/Bye.tsx'
 
 import './index.css'
 import './styles/_reset.css'
