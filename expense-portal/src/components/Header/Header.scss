@@ -6,11 +6,9 @@
     padding: 20px 10px;
     font-size: var(--font-large);
     height: fit-content;
-
-    &:first-child {
-      display: grid;
-      align-self: center;
-      font-size: var(--font-brand);
+    img {
+      height: 80px;
+      width: 140px;
     }
   }
 
