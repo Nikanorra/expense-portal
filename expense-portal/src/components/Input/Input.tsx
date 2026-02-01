@@ -1,13 +1,15 @@
 type  InputProps = {
+  id: string,
   label?: string,
-  value: string,
+  value: string | number,
   onChange: (value: string) => void,
-  placeholder: string,
+  placeholder?: string,
   type?: string,
 }
 
 
 export default function Input({
+  id,
   label,
   value,
   onChange,
@@ -15,14 +17,15 @@ export default function Input({
   type = "text",
 }:InputProps ) {
   return (
-    <label>
-    {label}
+    <div>
+    {label && <label htmlFor={id}>{label}</label>}
     <input
+      id={id}
       type={type}
       value={value}
       placeholder={placeholder}
       onChange={(e) => onChange(e.target.value)}
     />
-    </label>
+    </div>
   )
 }

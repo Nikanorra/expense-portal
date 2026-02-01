@@ -1,7 +1,15 @@
 import './Home.scss'
 import Modal from '../../components/Modal/Modal'
+import Input from '../../components/Input/Input'
+
+import { useState, useEffect } from 'react'
+
 
 export default function Home() {
+  const [name, setName] = useState('')
+  useEffect(() => {
+    console.log('input for full name is:', name)
+  }, [name])
   return (
     <div className='welcome'>
       <div className="welcome__content">
@@ -10,7 +18,9 @@ export default function Home() {
         <h3>We’ll take care of the rest.</h3>
       </div>
 
-      <Modal></Modal>
+      <Modal>
+        <Input id='fullName' value={name} onChange={setName} placeholder='Full name'></Input>
+      </Modal>
 </div>
   )
 }

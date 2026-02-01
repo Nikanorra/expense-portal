@@ -1,14 +1,17 @@
+// import { Outlet } from 'react-router-dom'
+import { ReactNode } from 'react'
 import styles from './Modal.module.scss'
-import Input from '../Input/Input'
-import { useState } from 'react'
 
-export default function Modal() {
-  const [name, setName] = useState('')
+type ModalProps = {
+  children: ReactNode
+}
+
+export default function Modal({children}: ModalProps) {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <h3>title</h3>
-        <Input value={name} onChange={setName} placeholder='Full name'></Input>
+          {children}
       </div>
     </div>
   )
