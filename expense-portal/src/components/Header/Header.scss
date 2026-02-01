@@ -1,0 +1,34 @@
+  header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--red);
+    color: var(--white);
+    padding: 20px 10px;
+    font-size: var(--font-large);
+    height: fit-content;
+    img {
+      height: 80px;
+      width: 140px;
+    }
+  }
+
+  .user {
+    display: grid;
+    grid-template-areas:
+    "name edit"
+    "currency edit";
+    justify-items: end;
+  }
+  .user__name {
+    grid-area: name;
+  }
+  .user__currency {
+    grid-area: currency;
+    font-size: var(--font-basic);
+  }
+  .user__edit {
+    grid-area: edit;
+    align-self: center;
+    padding-left: 20px;
+    font-size: var(--font-basic);
+  }
