@@ -1,5 +1,9 @@
+@use '../../styles/variables' as *;
+
 .overlay {
   // background: rgba(211, 211, 211, 0.4);
+  @include flex-center-col;
+
 
   .modal {
     padding: 50px;

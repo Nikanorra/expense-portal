@@ -1,13 +1,14 @@
 import styles from './Modal.module.scss'
 import Input from '../Input/Input'
+import { useState } from 'react'
 
 export default function Modal() {
+  const [name, setName] = useState('')
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <h3>title</h3>
-        <p>This is glassmorphism modal</p>
-        <Input label="name" value={name} placeholder='GBP'></Input>
+        <Input value={name} onChange={setName} placeholder='Full name'></Input>
       </div>
     </div>
   )
