@@ -1,16 +1,28 @@
 import './RadioButton.scss'
 
-export default function RadioButton() {
+export type CurrencyType = {
+  label: string;
+  value: string;
+}
+
+type Props = {
+  name: string;
+  value: string;
+  options: CurrencyType[];
+  onChange: (value: string) => void;
+}
+
+export default function RadioButton({name, value, options = [], onChange}: Props) {
   return (
     <fieldset className='claim__type'>
-      <label htmlFor="">
-        <input type="radio" name="claim" value="Expenses" checked/>
-        <span>Expenses</span>
+      {
+        options.map(option => (
+        <label key={option.value}>
+        <input type="radio" name={name} value={option.value} checked={value === option.value} onChange={() => onChange(option.value)}/>
+        <span>{option.value}</span>
       </label>
-      <label htmlFor="">
-        <input type="radio" name="claim" value="Income"/>
-        <span>Income</span>
-      </label>
+      ))
+      }
     </fieldset>
   )
 }

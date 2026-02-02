@@ -8,9 +8,15 @@ import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [name, setName] = useState('')
+  const [currency, setCurrency] = useState('GBP')
+
   useEffect(() => {
     console.log('input for full name is:', name)
-  }, [name])
+
+    console.log('chosen currency is:', currency)
+  }, [name, currency])
+
+
   return (
     <div className='welcome'>
       <div className="welcome__content">
@@ -20,9 +26,16 @@ export default function Home() {
       </div>
 
       <Modal>
+
         <Input id='fullName' value={name} onChange={setName} placeholder='Full name'></Input>
+
+        <RadioButton name='currency' value={currency} onChange={setCurrency} options={[
+        { label: 'GBP £', value: 'GBP' },
+        { label: 'EUR €', value: 'EUR' },
+      ]}></RadioButton>
+
       </Modal>
-      <RadioButton></RadioButton>
+
 </div>
   )
 }
