@@ -2,6 +2,7 @@ import './Home.scss'
 import Modal from '../../components/Modal/Modal'
 import Input from '../../components/Input/Input'
 import RadioButton from '../../components/RadioButton/RadioButton'
+import Button from '../../components/Buttons/Button'
 
 import { useState, useEffect } from 'react'
 
@@ -33,6 +34,8 @@ export default function Home() {
         { label: 'GBP £', value: 'GBP' },
         { label: 'EUR €', value: 'EUR' },
       ]}></RadioButton>
+
+        <Button link='hi' title='save'></Button>
 
       </Modal>
 
