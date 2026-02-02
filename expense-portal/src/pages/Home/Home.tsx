@@ -1,6 +1,7 @@
 import './Home.scss'
 import Modal from '../../components/Modal/Modal'
 import Input from '../../components/Input/Input'
+import RadioButton from '../../components/RadioButton/RadioButton'
 
 import { useState, useEffect } from 'react'
 
@@ -21,6 +22,7 @@ export default function Home() {
       <Modal>
         <Input id='fullName' value={name} onChange={setName} placeholder='Full name'></Input>
       </Modal>
+      <RadioButton></RadioButton>
 </div>
   )
 }

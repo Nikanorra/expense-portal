@@ -1,0 +1,47 @@
+  fieldset {
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid var(--red);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+
+  .claim__type {
+    padding: 0;
+    border: none;
+    justify-content: space-around;
+  }
+
+  .claim__type > label > input {
+    opacity: 0;
+    position: absolute;
+  }
+  .claim__type > label {
+    color: var(--white);
+    cursor: pointer;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .claim__type > :first-child > span {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 10px 15px;
+  }
+  .claim__type > :nth-child(2) > span {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px 15px;
+  }
+  .claim__type > label > span {
+    text-align: center;
+    background-color: var(--red);
+    opacity: .5;
+  }
+  .claim__type > label > input:checked + span {
+    opacity: 1;
+  }

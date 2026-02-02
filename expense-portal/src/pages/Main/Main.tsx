@@ -1,20 +1,12 @@
 import styles from './Main.module.scss'
+import RadioButton from '../../components/RadioButton/RadioButton'
 
 export default function Main() {
   return (
     <main className={styles.main}>
       <section className={styles.claim}>
         <form action="">
-          <fieldset className={styles.claim__type}>
-            <label htmlFor="">
-              <input type="radio" name="claim" value="Expenses" checked/>
-              <span>Expenses</span>
-            </label>
-            <label htmlFor="">
-              <input type="radio" name="claim" value="Income"/>
-              <span>Income</span>
-            </label>
-          </fieldset>
+          <RadioButton></RadioButton>
 
           <fieldset className='claim__date'>
             <input type="text" placeholder='19.02.2026' />
