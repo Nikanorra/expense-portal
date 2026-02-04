@@ -1,5 +1,6 @@
 import styles from './Main.module.scss'
 import RadioButton from '../../components/RadioButton/RadioButton'
+import Dropdown from '../../components/Dropdown/Dropdown'
 
 export default function Main() {
   return (
@@ -7,6 +8,7 @@ export default function Main() {
       <section className={styles.claim}>
         <form action="">
           <RadioButton></RadioButton>
+          <Dropdown></Dropdown>
 
           <fieldset className='claim__date'>
             <input type="text" placeholder='19.02.2026' />
