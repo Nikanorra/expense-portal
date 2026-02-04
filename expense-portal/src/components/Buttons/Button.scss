@@ -1,8 +1,12 @@
+@use '../../styles/variables' as *;
+
 .button {
   text-align: center;
-  background-color: var(--red);
   border-radius: 20px;
   border: none;
   padding: 10px 15px;
   min-width: 200px;
+
+  @include font-reg;
+  text-transform: uppercase;
 }

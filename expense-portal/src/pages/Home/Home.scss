@@ -23,6 +23,7 @@
   }
   .welcome__content {
     z-index: 1;
+    align-items: center;
     @include flex-center-col;
   }
 }

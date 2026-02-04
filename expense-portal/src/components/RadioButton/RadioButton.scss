@@ -1,3 +1,6 @@
+  @use '../../styles/variables' as *;
+
+
   fieldset {
     padding: 0;
     margin-bottom: 20px;
@@ -38,8 +41,7 @@
     padding: 10px 15px;
   }
   .claim__type > label > span {
-    text-align: center;
-    background-color: var(--red);
+    @include font-reg;
     opacity: .5;
   }
   .claim__type > label > input:checked + span {
