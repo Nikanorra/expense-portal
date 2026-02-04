@@ -75,28 +75,4 @@ button:focus-visible {
     border-radius: 20px;
     margin: 20px;
   }
-
-
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-  /* background: var(--white); */
-  color: var(--red);
-  width: 100%;
-  border: 1px solid var(--red);
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-}
-.dropdown > button {
-  background: none;
-  border: none;
-}
-.dropdown > ul {
-  display: none;
-}
-.dropdown.active > ul {
-  display: block;
-}
 }

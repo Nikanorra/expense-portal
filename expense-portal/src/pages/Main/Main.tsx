@@ -8,36 +8,15 @@ export default function Main() {
       <section className={styles.claim}>
         <form action="">
           <RadioButton></RadioButton>
-          <Dropdown></Dropdown>
+
 
           <fieldset className='claim__date'>
             <input type="text" placeholder='19.02.2026' />
             <button>choose</button>
           </fieldset>
 
-          <div className='dropdown'>
-            <button type='button' aria-haspopup='listbox' aria-expanded='false' aria-controls='dropdown-list'>
-            choose one
-            </button>
-            <ul id='dropdown-list' role='listbox' aria-labelledby='dropdown-button'>
-              <li role='option' area-selecte='false' data-value='support'>Support</li>
-              <li role='option' area-selecte='false' data-value='ministry'>Ministry</li>
-              <li role='option' area-selecte='false' data-value='project'>Project</li>
-              <li role='option' area-selecte='false' data-value='staff'>SIM office staff</li>
-            </ul>
-          </div>
 
-          <div className='dropdown'>
-            <button type='button' aria-haspopup='listbox-sub' aria-expanded='false' aria-controls='dropdown-list-sub'>
-            choose one
-            </button>
-            <ul id='dropdown-list-sub' role='listbox-sub' aria-labelledby='dropdown-button'>
-              <li role='option' area-selecte='false'>Children</li>
-              <li role='option' area-selecte='false'>Medical</li>
-              <li role='option' area-selecte='false'>Housing</li>
-              <li role='option' area-selecte='false'>Other</li>
-            </ul>
-          </div>
+          <Dropdown></Dropdown>
 
 
           <textarea name="description" id="description">Description</textarea>
