@@ -13,10 +13,12 @@ export const pots = [
       {label: 'Local', value: 'Communication'},
       {label: 'ICA', value: 'ICA'},
       {label: 'Train', value: 'Train'},
+      {label: 'MED', value: 'MED'},
     ]},
     {label: 'ME', value: 'ME'},
-    {label: 'Ghana', value: 'Communication'},
-    {label: 'Communication', value: 'Ghana'},
+    {label: 'Ghana', value: 'Ghana'},
+    {label: 'Ethiopia', value: 'Ethiopia'},
+    {label: 'ILS', value: 'ILS'},
   ]},
 
   {label: 'UK office', value: [

@@ -1,8 +1,27 @@
 import styles from './Main.module.scss'
 import RadioButton from '../../components/RadioButton/RadioButton'
 import Dropdown from '../../components/Dropdown/Dropdown'
+import { pots } from '../../constants/data/pots'
+import { useState } from 'react'
+
+type Pot = {
+  label: string;
+  value: string | Pot[];
+}
 
 export default function Main() {
+
+  const [path, setPath] = useState<Pot[]>([]);
+
+
+
+  function getOption(level: number): Pot[] {
+    if (level === 0) return pots;
+
+    const parentPot = path[level-1];
+    return Array.isArray(parentPot.value) ? parentPot.value : [];
+  }
+
   return (
     <main className={styles.main}>
       <section className={styles.claim}>
@@ -15,8 +34,23 @@ export default function Main() {
             <button>choose</button>
           </fieldset>
 
+          {Array(path.length + 1).fill(null).map((_, level) => {
+            const options = getOption(level);
+            if (options.length === 0) return null;
+            return (
+              <Dropdown
+                key={level}
+                options={options}
+                value={path[level] ?? null}
+                onSelect={(option) => {
+                  setPath(prev => [
+                    ...prev.slice(0, level), option
+                  ])
+                }}
+              ></Dropdown>
+            )
+          })}
 
-          <Dropdown></Dropdown>
 
 
           <textarea name="description" id="description">Description</textarea>

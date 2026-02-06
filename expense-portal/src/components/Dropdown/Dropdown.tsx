@@ -3,23 +3,43 @@ import { currencies } from '../../../src/constants/data/currencies'
 
 import './Dropdown.scss'
 
-export default function Dropdown() {
+
+type Option = {
+  label: string;
+  value: string | Option[]
+}
+
+type Dropdown = {
+  options: Option[],
+  value: Option | null,
+  placeholder?: string,
+  onSelect: (option: Option) => void
+}
+
+
+export default function Dropdown({
+  options,
+  value,
+  placeholder = "choose",
+  onSelect
+}: Dropdown) {
+
 
   const [ isOpen, setIsOpen ] = useState(false);
-  const options = currencies;
-  const [ selectedValue, setSelectedValue ] = useState<string | null>(null);
-  const selectedOption = options.find(option => option.value === selectedValue);
+  // const options = Option;
+  // const [ selectedValue, setSelectedValue ] = useState<string | null>(null);
+  // const selectedOption = options.find(option => option.value === selectedValue);
 
 
   return (
     <div className="dropdown">
       <button type="button" onClick={() => setIsOpen(prev => !prev)}>
-        {selectedOption ? selectedOption.value : 'choose'}
+        {value ? value.label : placeholder}
       </button>
         { isOpen && (
           <ul>
             { options.map(option => (
-              <li onClick={() => {setSelectedValue(option.value); setIsOpen(false)}}>{option.value}</li>
+              <li onClick={() => {onSelect(option); setIsOpen(false)}}>{option.label}</li>
             ))}
           </ul>
         )}
