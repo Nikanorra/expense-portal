@@ -26,23 +26,17 @@ export default function Dropdown({
 
 
   const [ isOpen, setIsOpen ] = useState(false);
-  // const options = Option;
-  // const [ selectedValue, setSelectedValue ] = useState<string | null>(null);
-  // const selectedOption = options.find(option => option.value === selectedValue);
-
 
   return (
-    <div className="dropdown">
+    <div className={`dropdown ${isOpen ? `open` : ``}`}>
       <button type="button" onClick={() => setIsOpen(prev => !prev)}>
         {value ? value.label : placeholder}
       </button>
-        { isOpen && (
           <ul>
             { options.map(option => (
               <li onClick={() => {onSelect(option); setIsOpen(false)}}>{option.label}</li>
             ))}
           </ul>
-        )}
     </div>
   )
 }
