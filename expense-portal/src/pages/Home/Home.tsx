@@ -1,15 +1,23 @@
 import './Home.scss'
 import Modal from '../../components/Modal/Modal'
 import Input from '../../components/Input/Input'
+import RadioButton from '../../components/RadioButton/RadioButton'
+import Button from '../../components/Buttons/Button'
 
 import { useState, useEffect } from 'react'
 
 
 export default function Home() {
   const [name, setName] = useState('')
+  const [currency, setCurrency] = useState('GBP')
+
   useEffect(() => {
     console.log('input for full name is:', name)
-  }, [name])
+
+    console.log('chosen currency is:', currency)
+  }, [name, currency])
+
+
   return (
     <div className='welcome'>
       <div className="welcome__content">
@@ -19,8 +27,18 @@ export default function Home() {
       </div>
 
       <Modal>
+
         <Input id='fullName' value={name} onChange={setName} placeholder='Full name'></Input>
+
+        <RadioButton name='currency' value={currency} onChange={setCurrency} options={[
+        { label: 'GBP £', value: 'GBP' },
+        { label: 'EUR €', value: 'EUR' },
+      ]}></RadioButton>
+
+        <Button link='hi' title='save'></Button>
+
       </Modal>
+
 </div>
   )
 }
