@@ -1,6 +1,7 @@
 import styles from './Main.module.scss'
 import RadioButton from '../../components/RadioButton/RadioButton'
 import Dropdown from '../../components/Dropdown/Dropdown'
+import Calendar from '../../components/Calendar/Calendar'
 import { pots } from '../../constants/data/pots'
 import { useState } from 'react'
 
@@ -50,6 +51,8 @@ export default function Main() {
               ></Dropdown>
             )
           })}
+
+          <Calendar/>
 
 
 
