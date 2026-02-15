@@ -1,11 +1,6 @@
-
-import {buidCalendar} from '../../utilities/calendar/buidCalendar.utilitie'
+import { useState } from 'react';
+import { buildCalendar } from '../../utilities/calendar/buildCalendar.utilitie'
 import './Calendar.scss'
-
-const today = new Date();
-const month = today.getMonth();
-const year = today.getFullYear();
-const days = buidCalendar(year, month);
 
 function isSameYMD(a: Date, b: Date) {
   return (
@@ -17,7 +12,21 @@ function isSameYMD(a: Date, b: Date) {
 
 
 export default function Calendar(){
-  const monthName = today.toLocaleString('en-GB', {month: 'long'});
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+
+
+  // const today = new Date();
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
+  const days = buildCalendar(year, month);
+
+  const monthName = currentDate.toLocaleString('en-GB', {month: 'long'});
+
+  function handleDayByClick(day: number) {
+    const clickedDate = new Date(year, month, day);
+    setSelectedDate(clickedDate);
+  }
 
   return (
     <div>
@@ -32,12 +41,15 @@ export default function Calendar(){
           }
 
           const cellDay = new Date(year, month, day);
-          const isToday = isSameYMD(cellDay, today);
+          const isToday = isSameYMD(cellDay, currentDate);
+          const isSelected = selectedDate && isSameYMD(cellDay, selectedDate);
+          console.log(isSelected);
 
           return (
-            <p key={index} className={isToday ? 'day today' : 'day'}>{day}</p>
+            <p key={index} className={`${isToday ? 'day today' : 'day'} ${isSelected ? 'day selected' : 'day'}`}
+            onClick={() => handleDayByClick(day)}
+            >{day}</p>
           )
-
         })}
       </div>
     </div>

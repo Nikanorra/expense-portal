@@ -1,16 +1,11 @@
-const today = new Date();
-const year = today.getFullYear();
-const month = today.getMonth();
-
-
-function getMonthDays() {
+function getMonthDays(year: number, month: number) {
   const daysInMonth = new Date(year, month, 0).getDate();
   const firstDayOfWeek = new Date(year, month, 1).getDay();
 
   return {daysInMonth, firstDayOfWeek}
 }
 
-export function buidCalendar(year, month) {
+export function buildCalendar(year: number, month: number) {
   const calendar = [];
   const { daysInMonth, firstDayOfWeek } = getMonthDays(year, month);
 

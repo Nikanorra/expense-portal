@@ -12,10 +12,14 @@
   .day {
     height: 30px;
     width: 30px;
-    &.today, &:hover {
+    &.selected, &:hover {
       cursor: pointer;
       background-color: var(--red);
       @include borders;
+    }
+    &.today {
+      @include borders;
+      opacity: .9;
     }
 
   }
