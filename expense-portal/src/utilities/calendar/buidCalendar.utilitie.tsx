@@ -2,8 +2,9 @@ const today = new Date();
 const year = today.getFullYear();
 const month = today.getMonth();
 
+
 function getMonthDays() {
-  const daysInMonth = new Date(year, month +1, 0).getDate();
+  const daysInMonth = new Date(year, month, 0).getDate();
   const firstDayOfWeek = new Date(year, month, 1).getDay();
 
   return {daysInMonth, firstDayOfWeek}
