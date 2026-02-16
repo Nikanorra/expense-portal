@@ -10,11 +10,10 @@ type Pot = {
   value: string | Pot[];
 }
 
+
 export default function Main() {
-
   const [path, setPath] = useState<Pot[]>([]);
-
-
+  const [calendarDate, setCalendarDate] = useState(new Date());
 
   function getOption(level: number): Pot[] {
     if (level === 0) return pots;
@@ -52,7 +51,7 @@ export default function Main() {
             )
           })}
 
-          <Calendar/>
+          <Calendar currentDate={calendarDate} setCurrentDate={setCalendarDate}/>
 
 
 
