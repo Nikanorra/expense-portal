@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+
+.calendar__days {
+  max-width: 240px;
+  height: 150px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  @include borders;
+  .day {
+    height: 30px;
+    width: 30px;
+    &.selected, &:hover {
+      cursor: pointer;
+      background-color: var(--red);
+      @include borders;
+    }
+    &.today {
+      @include borders;
+      opacity: .9;
+    }
+
+  }
+}
