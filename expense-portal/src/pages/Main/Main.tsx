@@ -2,6 +2,7 @@ import styles from './Main.module.scss'
 import RadioButton from '../../components/RadioButton/RadioButton'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import Calendar from '../../components/Calendar/Calendar'
+import Modal from '../../components/Modal/Modal'
 import { pots } from '../../constants/data/pots'
 import { useState } from 'react'
 
@@ -14,6 +15,9 @@ type Pot = {
 export default function Main() {
   const [path, setPath] = useState<Pot[]>([]);
   const [calendarDate, setCalendarDate] = useState(new Date());
+  const [isCalendarOpen, setCalendarOpen] = useState(false)
+  console.log('selected date: ', calendarDate, setCalendarDate);
+  console.log('setCalendarOpen false/true: ', setCalendarOpen);
 
   function getOption(level: number): Pot[] {
     if (level === 0) return pots;
@@ -25,13 +29,19 @@ export default function Main() {
   return (
     <main className={styles.main}>
       <section className={styles.claim}>
+
+        {isCalendarOpen &&
+          (<Modal>
+            <Calendar currentDate={calendarDate} setCurrentDate={setCalendarDate} onSelectDate={(date) => {setCalendarDate(date); setCalendarOpen(false)}}/>
+          </Modal>)
+        }
         <form action="">
           <RadioButton></RadioButton>
 
 
           <fieldset className='claim__date'>
-            <input type="text" placeholder='19.02.2026' />
-            <button>choose</button>
+            <input type="text" placeholder={calendarDate} />
+            <button type='button' onClick={() => setCalendarOpen(true)}>choose</button>
           </fieldset>
 
           {Array(path.length + 1).fill(null).map((_, level) => {
@@ -50,10 +60,6 @@ export default function Main() {
               ></Dropdown>
             )
           })}
-
-          <Calendar currentDate={calendarDate} setCurrentDate={setCalendarDate}/>
-
-
 
           <textarea name="description" id="description">Description</textarea>
 

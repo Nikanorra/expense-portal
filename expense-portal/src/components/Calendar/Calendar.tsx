@@ -5,6 +5,7 @@ import './Calendar.scss'
 type CalendarProps = {
   currentDate: Date;
   setCurrentDate: React.Dispatch<React.SetStateAction<Date>>
+  onSelectDate?: (date: Date) => void
 }
 
 function isSameYMD(a: Date, b: Date) {
@@ -15,7 +16,7 @@ function isSameYMD(a: Date, b: Date) {
   )
 }
 
-export default function Calendar({currentDate, setCurrentDate}: CalendarProps){
+export default function Calendar({currentDate, setCurrentDate, onSelectDate}: CalendarProps){
   console.log('Calendar mounted');
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
@@ -29,6 +30,7 @@ export default function Calendar({currentDate, setCurrentDate}: CalendarProps){
   function handleDayByClick(day: number) {
     const clickedDate = new Date(year, month, day);
     setSelectedDate(clickedDate);
+    onSelectDate?.(clickedDate)
   }
 
   function goToPrevMonth() {
